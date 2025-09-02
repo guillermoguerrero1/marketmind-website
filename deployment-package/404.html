@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Server Error - MarketMind Platform</title>
-    <meta name="description" content="A server error occurred on MarketMind Platform. Please try again later.">
+    <title>Page Not Found - MarketMind Platform</title>
+    <meta name="description" content="The page you're looking for could not be found on MarketMind Platform.">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
         .error-code {
             font-size: 8rem;
             font-weight: 700;
-            color: #dc2626;
+            color: #023c69;
             margin-bottom: 1rem;
             line-height: 1;
         }
@@ -73,7 +73,7 @@
             box-shadow: 0 10px 25px rgba(2, 60, 105, 0.3);
         }
         
-        .btn-refresh {
+        .btn-back {
             background: transparent;
             color: #023c69;
             border: 2px solid #023c69;
@@ -85,7 +85,7 @@
             transition: all 0.3s ease;
         }
         
-        .btn-refresh:hover {
+        .btn-back:hover {
             background: #023c69;
             color: white;
             transform: translateY(-2px);
@@ -135,14 +135,14 @@
     <!-- Error Content -->
     <section class="error-page">
         <div class="error-content">
-            <div class="error-code">500</div>
-            <h1 class="error-title">Server Error</h1>
+            <div class="error-code">404</div>
+            <h1 class="error-title">Page Not Found</h1>
             <p class="error-message">
-                Something went wrong on our end. Our team has been notified and is working to fix the issue. Please try again in a few minutes.
+                Oops! The page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.
             </p>
             <div class="error-actions">
                 <a href="index.html" class="btn-home">Go to Homepage</a>
-                <button onclick="location.reload()" class="btn-refresh">Try Again</button>
+                <button onclick="history.back()" class="btn-back">Go Back</button>
             </div>
         </div>
     </section>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Placeholder Images - MarketMind</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .image-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        canvas {
+            border: 1px solid #ccc;
+            margin: 10px 0;
+        }
+        button {
+            background: #023c69;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #1e40af;
+        }
+        .download-link {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 8px 15px;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .download-link:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MarketMind Placeholder Image Generator</h1>
+        <p>Click the buttons below to generate placeholder images for your website. Right-click each image and "Save As" to download.</p>
+        
+        <div class="image-section">
+            <h3>Favicon (16x16)</h3>
+            <canvas id="favicon" width="16" height="16"></canvas>
+            <br>
+            <button onclick="generateFavicon()">Generate Favicon</button>
+        </div>
+
+        <div class="image-section">
+            <h3>Hero App Image (600x800)</h3>
+            <canvas id="heroApp" width="600" height="800"></canvas>
+            <br>
+            <button onclick="generateHeroApp()">Generate Hero App</button>
+        </div>
+
+        <div class="image-section">
+            <h3>Screenshot 1 - Dashboard (800x600)</h3>
+            <canvas id="screenshot1" width="800" height="600"></canvas>
+            <br>
+            <button onclick="generateScreenshot1()">Generate Dashboard</button>
+        </div>
+
+        <div class="image-section">
+            <h3>Screenshot 2 - Trade Entry (800x600)</h3>
+            <canvas id="screenshot2" width="800" height="600"></canvas>
+            <br>
+            <button onclick="generateScreenshot2()">Generate Trade Entry</button>
+        </div>
+
+        <div class="image-section">
+            <h3>Screenshot 3 - Analytics (800x600)</h3>
+            <canvas id="screenshot3" width="800" height="600"></canvas>
+            <br>
+            <button onclick="generateScreenshot3()">Generate Analytics</button>
+        </div>
+
+        <div class="image-section">
+            <h3>App Store Badge (200x60)</h3>
+            <canvas id="appStore" width="200" height="60"></canvas>
+            <br>
+            <button onclick="generateAppStore()">Generate App Store Badge</button>
+        </div>
+
+        <div class="image-section">
+            <h3>Google Play Badge (200x60)</h3>
+            <canvas id="googlePlay" width="200" height="60"></canvas>
+            <br>
+            <button onclick="generateGooglePlay()">Generate Google Play Badge</button>
+        </div>
+
+        <div class="image-section">
+            <h3>Download All Images</h3>
+            <button onclick="downloadAll()">Download All Placeholders</button>
+            <p><small>Note: Right-click each generated image and select "Save image as..." to download.</small></p>
+        </div>
+    </div>
+
+    <script>
+        function generateFavicon() {
+            const canvas = document.getElementById('favicon');
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#023c69';
+            ctx.fillRect(0, 0, 16, 16);
+            
+            // Simple M logo
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 12px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('M', 8, 12);
+        }
+
+        function generateHeroApp() {
+            const canvas = document.getElementById('heroApp');
+            const ctx = canvas.getContext('2d');
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, 600, 800);
+            gradient.addColorStop(0, '#f8fafc');
+            gradient.addColorStop(1, '#e2e8f0');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 600, 800);
+            
+            // Phone frame
+            ctx.fillStyle = '#1e293b';
+            ctx.fillRect(50, 100, 500, 600);
+            ctx.fillStyle = '#334155';
+            ctx.fillRect(60, 110, 480, 580);
+            
+            // Screen content
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(70, 120, 460, 560);
+            
+            // App interface mockup
+            ctx.fillStyle = '#023c69';
+            ctx.fillRect(90, 150, 420, 60);
+            
+            // Chart bars
+            ctx.fillStyle = '#3b82f6';
+            for(let i = 0; i < 5; i++) {
+                ctx.fillRect(100 + i*80, 250, 60, 100 + Math.random()*100);
+            }
+            
+            // Text
+            ctx.fillStyle = '#023c69';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('MarketMind', 300, 190);
+            
+            ctx.font = '16px Arial';
+            ctx.fillText('Trading Journal', 300, 400);
+        }
+
+        function generateScreenshot1() {
+            const canvas = document.getElementById('screenshot1');
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, 800, 600);
+            
+            // Header
+            ctx.fillStyle = '#023c69';
+            ctx.fillRect(0, 0, 800, 80);
+            
+            // Navigation
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 18px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('MarketMind Dashboard', 400, 50);
+            
+            // Stats cards
+            const cards = [
+                {x: 50, y: 120, title: 'Total Trades', value: '156'},
+                {x: 250, y: 120, title: 'Win Rate', value: '68%'},
+                {x: 450, y: 120, title: 'Profit/Loss', value: '+$2,450'},
+                {x: 650, y: 120, title: 'Portfolio', value: '$12,340'}
+            ];
+            
+            cards.forEach(card => {
+                ctx.fillStyle = '#f8fafc';
+                ctx.fillRect(card.x, card.y, 120, 80);
+                ctx.strokeStyle = '#e2e8f0';
+                ctx.strokeRect(card.x, card.y, 120, 80);
+                
+                ctx.fillStyle = '#023c69';
+                ctx.font = 'bold 16px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(card.title, card.x + 60, card.y + 25);
+                ctx.fillText(card.value, card.x + 60, card.y + 50);
+            });
+            
+            // Chart area
+            ctx.fillStyle = '#f1f5f9';
+            ctx.fillRect(50, 240, 700, 300);
+            ctx.strokeStyle = '#cbd5e1';
+            ctx.strokeRect(50, 240, 700, 300);
+            
+            // Chart title
+            ctx.fillStyle = '#023c69';
+            ctx.font = 'bold 20px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Performance Chart', 400, 270);
+        }
+
+        function generateScreenshot2() {
+            const canvas = document.getElementById('screenshot2');
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, 800, 600);
+            
+            // Header
+            ctx.fillStyle = '#023c69';
+            ctx.fillRect(0, 0, 800, 80);
+            
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 18px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('New Trade Entry', 400, 50);
+            
+            // Form fields
+            const fields = [
+                {x: 50, y: 120, label: 'Symbol', value: 'AAPL'},
+                {x: 250, y: 120, label: 'Type', value: 'BUY'},
+                {x: 450, y: 120, label: 'Quantity', value: '100'},
+                {x: 650, y: 120, label: 'Price', value: '$150.25'},
+                {x: 50, y: 200, label: 'Entry Date', value: '2024-01-15'},
+                {x: 250, y: 200, label: 'Exit Date', value: '2024-01-20'},
+                {x: 450, y: 200, label: 'Exit Price', value: '$155.75'},
+                {x: 650, y: 200, label: 'Result', value: '+$550'}
+            ];
+            
+            fields.forEach(field => {
+                ctx.fillStyle = '#f8fafc';
+                ctx.fillRect(field.x, field.y, 120, 40);
+                ctx.strokeStyle = '#e2e8f0';
+                ctx.strokeRect(field.x, field.y, 120, 40);
+                
+                ctx.fillStyle = '#64748b';
+                ctx.font = '12px Arial';
+                ctx.textAlign = 'left';
+                ctx.fillText(field.label, field.x + 5, field.y + 15);
+                
+                ctx.fillStyle = '#023c69';
+                ctx.font = 'bold 14px Arial';
+                ctx.fillText(field.value, field.x + 5, field.y + 30);
+            });
+            
+            // Notes area
+            ctx.fillStyle = '#f8fafc';
+            ctx.fillRect(50, 280, 700, 200);
+            ctx.strokeStyle = '#e2e8f0';
+            ctx.strokeRect(50, 280, 700, 200);
+            
+            ctx.fillStyle = '#64748b';
+            ctx.font = '14px Arial';
+            ctx.textAlign = 'left';
+            ctx.fillText('Trade Notes:', 60, 300);
+            ctx.fillText('Strong earnings report, technical breakout above resistance.', 60, 320);
+            ctx.fillText('Risk management: Stop loss at $145, target $160.', 60, 340);
+        }
+
+        function generateScreenshot3() {
+            const canvas = document.getElementById('screenshot3');
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, 800, 600);
+            
+            // Header
+            ctx.fillStyle = '#023c69';
+            ctx.fillRect(0, 0, 800, 80);
+            
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 18px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Analytics & Performance', 400, 50);
+            
+            // Performance metrics
+            const metrics = [
+                {x: 50, y: 120, label: 'Sharpe Ratio', value: '1.85'},
+                {x: 200, y: 120, label: 'Max Drawdown', value: '-8.2%'},
+                {x: 350, y: 120, label: 'Avg Trade', value: '+$156'},
+                {x: 500, y: 120, label: 'Best Month', value: '+$3,240'},
+                {x: 650, y: 120, label: 'Worst Month', value: '-$890'}
+            ];
+            
+            metrics.forEach(metric => {
+                ctx.fillStyle = '#f8fafc';
+                ctx.fillRect(metric.x, metric.y, 120, 60);
+                ctx.strokeStyle = '#e2e8f0';
+                ctx.strokeRect(metric.x, metric.y, 120, 60);
+                
+                ctx.fillStyle = '#64748b';
+                ctx.font = '12px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(metric.label, metric.x + 60, metric.y + 20);
+                
+                ctx.fillStyle = '#023c69';
+                ctx.font = 'bold 16px Arial';
+                ctx.fillText(metric.value, metric.x + 60, metric.y + 40);
+            });
+            
+            // Chart area
+            ctx.fillStyle = '#f1f5f9';
+            ctx.fillRect(50, 220, 700, 350);
+            ctx.strokeStyle = '#cbd5e1';
+            ctx.strokeRect(50, 220, 700, 350);
+            
+            // Chart lines
+            ctx.strokeStyle = '#3b82f6';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(100, 500);
+            ctx.lineTo(200, 450);
+            ctx.lineTo(300, 480);
+            ctx.lineTo(400, 400);
+            ctx.lineTo(500, 420);
+            ctx.lineTo(600, 350);
+            ctx.lineTo(700, 380);
+            ctx.stroke();
+            
+            // Chart title
+            ctx.fillStyle = '#023c69';
+            ctx.font = 'bold 20px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Portfolio Performance Over Time', 400, 250);
+        }
+
+        function generateAppStore() {
+            const canvas = document.getElementById('appStore');
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0, 0, 200, 60);
+            
+            // Apple logo
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('App Store', 100, 35);
+            
+            // Download text
+            ctx.font = '12px Arial';
+            ctx.fillText('Download on the', 100, 50);
+        }
+
+        function generateGooglePlay() {
+            const canvas = document.getElementById('googlePlay');
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#01875f';
+            ctx.fillRect(0, 0, 200, 60);
+            
+            // Google Play text
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 16px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('GET IT ON', 100, 25);
+            ctx.font = 'bold 20px Arial';
+            ctx.fillText('Google Play', 100, 45);
+        }
+
+        function downloadAll() {
+            // Generate all images
+            generateFavicon();
+            generateHeroApp();
+            generateScreenshot1();
+            generateScreenshot2();
+            generateScreenshot3();
+            generateAppStore();
+            generateGooglePlay();
+            
+            alert('All placeholder images generated! Right-click each image and select "Save image as..." to download them.\n\nSave them with these names:\n- favicon.ico\n- hero-app.png\n- screenshot-1.png\n- screenshot-2.png\n- screenshot-3.png\n- app-store-badge.png\n- google-play-badge.png');
+        }
+
+        // Generate all images on page load
+        window.onload = function() {
+            generateFavicon();
+            generateHeroApp();
+            generateScreenshot1();
+            generateScreenshot2();
+            generateScreenshot3();
+            generateAppStore();
+            generateGooglePlay();
+        };
+    </script>
+</body>
+</html>

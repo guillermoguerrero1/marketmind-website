@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Store Badge PNG Generator</title>
+    <style>
+        body {
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        .app-store-badge {
+            background: #000000;
+            border-radius: 8px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 200px;
+            height: 60px;
+            box-sizing: border-box;
+        }
+        
+        .apple-logo {
+            width: 24px;
+            height: 24px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: #000000;
+        }
+        
+        .text-content {
+            color: #ffffff;
+            line-height: 1.2;
+        }
+        
+        .top-text {
+            font-size: 11px;
+            font-weight: 400;
+        }
+        
+        .bottom-text {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .instructions {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h3>App Store Badge PNG</h3>
+        <p>Right-click on the badge below and select "Save image as..." to download the PNG file.</p>
+        <p>Save it as: <strong>app-store-badge.png</strong></p>
+        <p>Then upload it to your <strong>assets/</strong> folder.</p>
+    </div>
+    
+    <div class="app-store-badge">
+        <div class="apple-logo">🍎</div>
+        <div class="text-content">
+            <div class="top-text">Download on the</div>
+            <div class="bottom-text">App Store</div>
+        </div>
+    </div>
+</body>
+</html>
