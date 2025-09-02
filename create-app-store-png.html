@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Store Badge PNG Generator</title>
+    <title>App Store Badge PNG Generator - Fixed Size</title>
     <style>
         body {
             background: #f0f0f0;
@@ -25,6 +25,7 @@
             width: 200px;
             height: 60px;
             box-sizing: border-box;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         
         .apple-logo {
@@ -65,14 +66,32 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             max-width: 300px;
         }
+        
+        .size-info {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #333;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+        }
     </style>
 </head>
 <body>
     <div class="instructions">
-        <h3>App Store Badge PNG</h3>
-        <p>Right-click on the badge below and select "Save image as..." to download the PNG file.</p>
+        <h3>App Store Badge PNG - Fixed Size</h3>
+        <p><strong>Important:</strong> This badge is exactly 200x60 pixels</p>
+        <p>Right-click on the badge below and select "Save image as..."</p>
         <p>Save it as: <strong>app-store-badge.png</strong></p>
         <p>Then upload it to your <strong>assets/</strong> folder.</p>
+    </div>
+    
+    <div class="size-info">
+        <strong>Dimensions:</strong> 200px × 60px<br>
+        <strong>CSS Height:</strong> 60px (matches your CSS)<br>
+        <strong>Background:</strong> Black with white elements
     </div>
     
     <div class="app-store-badge">
