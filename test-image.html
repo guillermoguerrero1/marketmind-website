@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-image { border: 2px solid #ccc; margin: 10px 0; }
+        .error { color: red; }
+        .success { color: green; }
+    </style>
+</head>
+<body>
+    <h1>Image Path Test</h1>
+    
+    <h2>Testing app-store-badge.png:</h2>
+    <img src="assets/app-store-badge.png" alt="App Store Badge" class="test-image" onerror="this.style.border='2px solid red'; this.alt='IMAGE FAILED TO LOAD'; document.getElementById('status').innerHTML='❌ Image failed to load - check path and permissions'; document.getElementById('status').className='error';" onload="document.getElementById('status').innerHTML='✅ Image loaded successfully!'; document.getElementById('status').className='success';">
+    
+    <div id="status">Loading...</div>
+    
+    <h3>File Paths to Check:</h3>
+    <ul>
+        <li><strong>Current path:</strong> assets/app-store-badge.png</li>
+        <li><strong>Full path:</strong> /home1/nupwofte/public_html/assets/app-store-badge.png</li>
+        <li><strong>URL path:</strong> https://marketmindplatform.com/assets/app-store-badge.png</li>
+    </ul>
+    
+    <h3>Common Issues:</h3>
+    <ul>
+        <li>File permissions (should be 644)</li>
+        <li>Case sensitivity (assets vs Assets)</li>
+        <li>File extension (.png vs .PNG)</li>
+        <li>File actually uploaded to server</li>
+    </ul>
+</body>
+</html>
